@@ -42,13 +42,45 @@ button {
     font-family: var(--secondary-font);
     font-size: 18px;
     text-decoration-line: underline;
-    display: block;
+    display: inline;
     margin: 0 auto;
+}
+#menu{
+    font-size: 24px;
+    display: block;
+}
+.hide {
+	display: none;
+}
+.viewer{
+    position: fixed;
+    top:0;left:0;bottom:0;right:0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    place-items: center;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+}
+.viewer img{
+    grid-row: 2;
+    max-height: 100%;
+    z-index: 10;
+}
+.close-viewer{
+    grid-row: 1;
+    color: red;
+    font-size: 20px;
+    justify-self: end;
 }
 @media screen and (min-width: 700px)    {
     .gallery{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    button{
+        display: block;
     }
 }
 @media screen and (min-width: 1000px)    {
@@ -58,5 +90,16 @@ button {
     }
     #menu{
         display: none;
+    }
+    button{
+        display: block;
+    }
+    #viewer{
+        top:5%;left:5%;bottom:5%;right:5%;
+        width: 90%;
+        height: 90%;
+    }
+    #viewer img{
+        padding: 10%;
     }
 }
