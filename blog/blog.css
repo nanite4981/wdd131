@@ -1,0 +1,96 @@
+:root {
+    --secondary-color: #EFC69B;
+    --background-color: white;
+    --text-color: #473144;
+    --link-color: #AF1B3F;
+    --body-font: "Helvetica", "Arial", sans-serif;
+    --headline-font: "Times New Roman", "Impact", serif;
+}
+
+body{
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+a{
+    color: var(--link-color);
+    font-size: 1.2rem;
+}
+
+h1{
+    font-family: var(--headline-font);
+}
+
+.nav-list{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    justify-items: end;
+    gap: 10px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+nav{
+    border-bottom: 2px solid var(--secondary-color);
+    border-top: 2px solid var(--secondary-color);
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article{
+    grid-template-columns: 1fr 3fr;
+    display: grid;
+}
+
+.book{
+    grid-template-rows: auto 1fr;
+    display: grid;
+    border-left: 2px solid var(--secondary-color);
+    padding: 10px;
+    max-height: 90%;
+    text-align: center;
+}
+
+.book img{
+    justify-self: center;
+}
+
+.book-title{
+    font-size: 2rem;
+    font-style: bold;
+}
+
+.book-details{
+    text-align: right;
+    padding: 10px;
+}
+
+body h1.site-title{
+    font-size: 32px;
+    padding: 20px;
+    text-align: center;
+}
+
+#form-filter{
+    border: 2px solid var(--secondary-color);
+    padding: 30px;
+}
+.book-image img {
+    width: 100%;
+    height: auto;
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -40px;
+}
+.skiptocontent a:focus {
+	top: 0px;
+}
