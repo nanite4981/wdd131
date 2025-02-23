@@ -1,0 +1,127 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+.cardFront, .cardBack{
+    position: aboslute;
+    border-radius: 10px; /* Rounded edges */
+    padding: 20px;
+    width: 300px;
+    background-color: lightgray;
+    box-shadow: inset;
+}
+
+#creditCardForm{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr 1fr;
+    position: relative;
+    gap: 10px;
+    max-width: 500px;
+    /*width: 300px;
+    height: 200px;*/
+}
+
+.cardFront{
+    grid-column: 1/3;
+    grid-row: 1/3;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 20px;
+    gap: 10px;
+}
+
+#total{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.card-image
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: right;
+}
+#cardNumberContainer
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+#cardHolderContainer
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+#cardExpiration
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    gap: 10px;
+}
+
+.cardBack{
+    grid-column: 2/4;
+    grid-row: 2/4;
+    z-index: 9;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-self: end;
+    /*transform: translate(10%,10%); margin top and left also might work also just top and left*/
+}
+
+#black-bar
+{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color: black;
+    height: 20px;
+}
+#cardVerificationContainer
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+button{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    border-radius: 10px;
+}
+
+#expirationLabel{
+    justify-self: center;
+    grid-column: 1/3;
+}
+#month
+{
+    grid-column: 1/2;
+}
+#year
+{
+    grid-column: 2/3;
+}
+
+input{
+    width: 100%;
+}
+
+#name{
+    text-transform: none;
+}
