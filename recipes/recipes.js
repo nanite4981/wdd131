@@ -279,3 +279,115 @@ const recipes = [
 		rating: 4
 	}
 ]
+
+function randomNum (num){
+	return Math.floor(Math.random()*num);
+}
+
+function randomRecipe(list){
+	const number = randomNum(list.length);
+	return list[number];
+}
+
+//console.log(randomRecipe(recipes)); //for testing
+
+function recipeTemplate(recipe) {
+	return `<div class="recipe">
+	<img id="recipe-image" src="${recipe[0].image}" alt="">
+	<div id="recipe-text">
+		<ul class="tags">
+			${tagsTemplate(recipe[0].tags || [])}
+		</ul>
+		<h2 id="recipe-name"><a href="#">${recipe[0].name}</a></h2>
+		<p class="recipe__ratings">
+			${ratingTemplate(recipe[0].rating)}
+		</p>
+		<p class="description">
+			${recipe[0].description}
+		</p>
+	</div>
+</div>`;
+}
+
+function tagsTemplate(tags) {
+	// loop through the tags list and transform the strings to HTML
+	//console.log(tags); // Check if tags is an array
+	let html = '';
+	tags.forEach(element => {
+		html += `<li class="tag">${element}</li>`
+	});
+	return html;
+}
+
+function ratingTemplate(rating) {
+	// begin building an html string using the ratings HTML written earlier as a model.
+	let html = `<span
+	class="rating"
+	role="img"
+	aria-label="Rating: ${rating} out of 5 stars"
+>`
+// our ratings are always out of 5, so create a for loop from 1 to 5
+
+		// check to see if the current index of the loop is less than our rating
+		// if so then output a filled star
+
+		// else output an empty star
+	for (let i = 1; i <= 5; i++){
+		if (i <= rating){
+			html += '<span aria-hidden="true" class="icon-star">⭐</span>';
+		}
+		else{
+			html += '<span aria-hidden="true" class="icon-star-empty">☆</span>';
+		}
+	}
+
+	// after the loop, add the closing tag to our string
+	html += `</span>`
+	// return the html string
+	return html
+}
+
+//for testing
+//const recipe = getRandomListEntry(recipes);
+//console.log(recipeTemplate(recipe));
+
+function renderRecipes(recipeList) {
+	// get the element we will output the recipes into
+	const recipeHTML = document.querySelector(".recipe");
+
+	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
+	const html = recipeTemplate(recipeList);
+
+	// Set the HTML strings as the innerHTML of our output element.
+	recipeHTML.innerHTML = html;
+
+}
+
+function init() {
+  // get a random recipe
+  const recipe = randomRecipe(recipes)
+  // render the recipe with renderRecipes.
+  renderRecipes([recipe]);// I removed the brackets here and everything went from undefined to normal on init, but things are undefined for the search.
+}
+init();
+
+document.querySelector("button[type='submit']").addEventListener("click", function(event) {
+    event.preventDefault();
+	searchHandler();
+});
+
+function searchHandler(){
+	const searchQuery = document.querySelector("input[type='text']").value.toLowerCase();
+	const filteredRecipes = filterRecipes(searchQuery);
+	renderRecipes(filteredRecipes);//do I need brackets around this like with init()
+}
+
+function filterRecipes(query){
+	const recipeResults = recipes.filter(recipe => {return recipe.name.toLowerCase().includes(query) || recipe.description.toLowerCase().includes(query) || recipe.tags.find(tag => tag.toLowerCase().includes(query)) || recipe.tags.find(recipeIngredient => recipeIngredient.toLowerCase().includes(query))});
+	const recipeSorted = recipeResults.sort((a, b) => a.name.localeCompare(b.name));
+	return recipeSorted;
+}
+
+// The main problem I was having was that I was grabbing the name and stuff from recipe,
+// but the recipe that my template was receiving was an array that had one or more lists inside of it.
+// I solved this by grabbing teh first element of the recipe array in my template.

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Shaun Vann" description="insert site description here">
+    <meta property="og:title" content="Page Title">
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Page Description">
+    <meta property="og:image" content="URL to an image">
+    <meta property="og:url" content="URL of the page">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
@@ -17,7 +23,7 @@
     </header>
     <main>
         <div class="search">
-            <form id="search-form" action="placeholder.html">
+            <form id="search-form" action="">
                 <input type="text" placeholder = "Find a recipe" name="search">
                 <button type="submit"><img src="images/search.svg"></button>
             </form>
@@ -25,20 +31,23 @@
         <div class="recipe">
             <img id="recipe-image" src="images/apple-crisp.jpg" alt="A juicy, appley apple crisp">
             <div id="recipe-text">
-                <div class="tags">
-                    <p class="tag">dessert</p>
-                </div>
-                <h3 id="recipe-name">Apple Crisp</h3>
-                <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
+                <ul class="tags">
+                    <li class="tag">Dessert</li>
+                    <li class="tag">Fruit</li>
+                </ul>
+                <h2 id="recipe-name"><a href="#">Apple Crisp</a></h2>
+                <p class="recipe__ratings">
+                    <span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: 4 out of 5 stars">
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">☆</span>
+                    </span>
+                </p>
                 <p id="description">This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
             </div>
         </div>
