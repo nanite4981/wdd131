@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+ :root {
+ --primary-color: #1B98E0;
+ --secondary-color: #59c3c3;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: "Amatic SC";
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    justify-self: center;
+}
+
+#attribution{
+    font-size: 0.6em;
+    color: var(--primary-color);
+}
+
+img {
+	max-width: 100%;
+    height: 1em;
+    width: 1em;
+}
+
+#title-image{
+    height: 2em;
+    width: 2em;
+}
+
+.social-images{
+    height: 3em;
+    width: 3em;
+}
+
+.search{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid grey;
+}
+
+.recipe{
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-text{
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-image{
+    height: 250px;
+    width: 250px;
+    margin-right: 3%;
+}
+
+#recipe-name{
+    color: var(--primary-color);
+}
+
+.tag{
+    display: inline-block;
+    border: 2px solid grey;
+    margin-top: 4px;
+    padding: 4px;
+    font-weight: bold;
+}
+
+#description{
+    display: none;
+}
+
+footer{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+h1,h2,h3{
+    font-family: 'caveat', cursive;
+}
+
+@media screen and (min-width: 600px)
+{
+    .recipe{
+        flex-direction: row;
+        align-items: center;
+    }
+    #description{
+        display: block;
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #attribution{
+        order: 1;
+    }
+    .social{
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 960px)
+{
+    .recipe{
+        flex-direction: row;
+        justify-content: center;
+    }
+    #description{
+        display: block;
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #attribution{
+        order: 1;
+    }
+    .social{
+        order: 2;
+    }
+    *{
+        max-width: 960px;
+    }
+}
