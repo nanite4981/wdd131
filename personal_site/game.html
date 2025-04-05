@@ -16,77 +16,93 @@
         <a href="game.html">Play</a>
     </header>
     <main>
-        <div class="resources">
-            <span class="tooltip">
-                <div class="Isekai">
-                    <img src="Images/Isekai.png" alt="isekai icon" class="icon">
-                    <p>Isekais</p>
-                </div>
-                <span class="tooltiptext"><p>Flavor text</p><p>Generates Gold</p></span>
-            </span>
-            <span class="tooltip">
-                <div class="OP Abilities">
-                    <img src="Images/Ability.png" alt="abilities icon" class="icon">
-                    <p>OP Abilities</p>
-                </div>
-                <span class="tooltiptext"><p>Flavor text</p><p>Used to build Mines and Shops</p></span>
-            </span>
-            <span class="tooltip">
-                <div class="Gold">
-                    <img src="Images/Gold.png" alt="gold icon" class="icon">
-                    <p>Gold</p>
-                </div>
-                <span class="tooltiptext"><p>Flavor text</p><p>Used to build Trucks, Shops, XP Farms, Negotiators, and Sacrifice</p></span>
-            </span>
-            <span class="tooltip">
-                <div class="Legendaries">
-                    <img src="Images/Legendary.png" alt="legendary item icon" class="icon">
-                    <p>Legendaries</p>
-                </div>
-                <span class="tooltiptext"><p>Flavor text</p><p>Used to build XP Farms</p></span>
-            </span>
-            <span class="tooltip">
-                <div class="Wish">
-                    <img src="Images/Wish.png" alt="wish icon" class="icon">
-                    <p>Wishes</p>
-                </div>
-                <span class="tooltiptext"><p>Flavor text</p><p>Reduces cost for all builds</p></span>
-            </span>
-        </div>
-        <div class="production">
-            <div class="tooltip">
-                <p>Isekai (#)</p>
-                <span class="tooltiptext"><p>Click to isekai someone</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>Trucks (#)</p>
-                <span class="tooltiptext"><p>Provides passive isekai production</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>Skill Tree (#)</p>
-                <span class="tooltiptext"><p>Provides OP Ability production</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>Mine (#)</p>
-                <span class="tooltiptext"><p>Provides % increase to Gold production</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>Shop (#)</p>
-                <span class="tooltiptext"><p>Provides passive Legendary production</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>XP Farm (#)</p>
-                <span class="tooltiptext"><p>Provides % increase to OP Ability production</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>Negotiator (#)</p>
-                <span class="tooltiptext"><p>Provides % increase to Legendary production</p><p>Price #</p></span>
-            </div>
-            <div class="tooltip">
-                <p>Goddess Temple Sacrifice (#)</p>
-                <span class="tooltiptext"><p>Sacrifice all isekais for a wish. Provides % cost reduction</p><p>Price #</p></span>
-            </div>
-        </div>
+        <table width="100%" align="center" cellpadding="5" cellspacing="1" style="background:#c8c8c8; border:1px">
+            <tbody><th style="font-size: 100%; margin:0px;padding: 5px;background:#7272ec"><span style="color:white">Resources</span></th>   
+                <tr><td style="font-size: 100%; margin:0px;padding: 3px;background:#F5F5DC">
+                    <center>
+                        <div class="resources">
+                            <span class="tooltip">
+                                <div class="Isekai">
+                                    <img src="Images/Isekai.png" alt="isekai icon" class="icon">
+                                    <p>Isekais (<span id="isekaiResource"></span>)</p>
+                                </div>
+                                <span class="tooltiptext"><p>You slowly extort gold from all the people you've isekaied. Eventuallly, you may even be able to sacrifice them.</p><p>Generates Gold</p></span>
+                            </span>
+                            <span class="tooltip">
+                                <div class="Gold">
+                                    <img src="Images/Gold.png" alt="gold icon" class="icon">
+                                    <p>Gold (<span id="goldResource"></span>)</p>
+                                </div>
+                                <span class="tooltiptext"><p>Everyone's favorite thing: money!</p><p>Used to build Trucks, Shops, XP Farms, Negotiators, and Sacrifice</p></span>
+                            </span>
+                            <span class="tooltip">
+                                <div class="OP Abilities">
+                                    <img src="Images/Ability.png" alt="abilities icon" class="icon">
+                                    <p>OP Abilities (<span id="abilityResource"></span>)</p>
+                                </div>
+                                <span class="tooltiptext"><p>What do you mean this isekaied hero has Invulnerability?!</p><p>Used to build Mines and Shops</p></span>
+                            </span>
+                            <span class="tooltip">
+                                <div class="Legendaries">
+                                    <img src="Images/Legendary.png" alt="legendary item icon" class="icon">
+                                    <p>Legendaries (<span id="legendaryResource"></span>)</p>
+                                </div>
+                                <span class="tooltiptext"><p>Legendary items of all flavors are found in the hands of isekaied heroes.</p><p>Used to build XP Farms</p></span>
+                            </span>
+                            <span class="tooltip">
+                                <div class="Wish">
+                                    <img src="Images/Wish.png" alt="wish icon" class="icon">
+                                    <p>Wishes (<span id="wishResource"></span>)</p>
+                                </div>
+                                <span class="tooltiptext"><p>Something of great importance must have been sacrificed for this.</p><p>Reduces cost for all builds</p></span>
+                            </span>
+                        </div>
+                    </center>
+                </td></tr>
+            </tbody>
+        </table>
+        <table width="100%" align="center" cellpadding="5" cellspacing="1" style="background:#c8c8c8; border:1px">
+            <tbody><th style="font-size: 100%; margin:0px;padding: 5px;background:#7272ec"><span style="color:white">Production</span></th>   
+                <tr><td style="font-size: 100%; margin:0px;padding: 3px;background:#F5F5DC">
+                    <center>
+                        <div class="production">
+                            <button class="tooltip" onclick="build('isekai')">
+                                <p>Isekai (<span id="isekai"></span>)</p>
+                                <div class="tooltiptext"><p>Click to isekai someone</p><span id="isekaiPrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('truck', 'gold')">
+                                <p>Trucks (<span id="truck"></span>)</p>
+                                <div class="tooltiptext"><p>Provides passive isekai production</p><span id="truckPrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('tree', 'isekai')">
+                                <p>Skill Tree (<span id="tree"></span>)</p>
+                                <div class="tooltiptext"><p>Provides OP Ability production</p><span id="treePrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('mine', 'ability')">
+                                <p>Mine (<span id="mine"></span>)</p>
+                                <div class="tooltiptext"><p>Provides % increase to Gold production</p><span id="minePrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('shop', 'ability', 'gold')">
+                                <p>Shop (<span id="shop"></span>)</p>
+                                <div class="tooltiptext"><p>Provides passive Legendary production</p><span id="shopPrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('farm', 'gold', 'legendary')">
+                                <p>XP Farm (<span id="farm"></span>)</p>
+                                <div class="tooltiptext"><p>Provides % increase to OP Ability production</p><span id="farmPrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('kenobi', 'isekai', 'gold')">
+                                <p>Negotiator (<span id="kenobi"></span>)</p>
+                                <div class="tooltiptext"><p>Provides % increase to Legendary production</p><span id="kenobiPrice"></span></div>
+                            </button>
+                            <button class="tooltip" onclick="build('wish', 'isekai', 'gold')">
+                                <p>Goddess Temple Sacrifice (<span id="wish"></span>)</p>
+                                <div class="tooltiptext"><p>Sacrifice all isekais for a wish. Provides % cost reduction</p><span id="wishPrice"></span></div>
+                            </button>
+                        </div>
+                    </center>
+                </td></tr>
+            </tbody>
+        </table>
         <h4>Day 7</h4>
     </main>
     <footer>
