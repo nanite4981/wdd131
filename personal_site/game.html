@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Shaun Vann" description="insert site description here">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.png">
     <link rel="stylesheet" href="styles/style.css">
     <script src="main.js" defer></script>
-    <title></title>
+    <title>Game</title>
 </head>
 <body>
     <header>
@@ -22,35 +23,35 @@
                     <center>
                         <div class="resources">
                             <span class="tooltip">
-                                <div class="Isekai">
+                                <div class="Isekai" id="isekai_resource"><!--had to add id as well to work with getElementById when adding event listeners-->
                                     <img src="Images/Isekai.png" alt="isekai icon" class="icon">
                                     <p>Isekais (<span id="isekaiResource"></span>)</p>
                                 </div>
                                 <span class="tooltiptext"><p>You slowly extort gold from all the people you've isekaied. Eventuallly, you may even be able to sacrifice them.</p><p>Generates Gold</p></span>
                             </span>
                             <span class="tooltip">
-                                <div class="Gold">
+                                <div class="Gold" id="gold">
                                     <img src="Images/Gold.png" alt="gold icon" class="icon">
                                     <p>Gold (<span id="goldResource"></span>)</p>
                                 </div>
                                 <span class="tooltiptext"><p>Everyone's favorite thing: money!</p><p>Used to build Trucks, Shops, XP Farms, Negotiators, and Sacrifice</p></span>
                             </span>
                             <span class="tooltip">
-                                <div class="OP Abilities">
+                                <div class="OP Abilities" id="ability">
                                     <img src="Images/Ability.png" alt="abilities icon" class="icon">
                                     <p>OP Abilities (<span id="abilityResource"></span>)</p>
                                 </div>
                                 <span class="tooltiptext"><p>What do you mean this isekaied hero has Invulnerability?!</p><p>Used to build Mines and Shops</p></span>
                             </span>
                             <span class="tooltip">
-                                <div class="Legendaries">
+                                <div class="Legendaries" id="legendary">
                                     <img src="Images/Legendary.png" alt="legendary item icon" class="icon">
                                     <p>Legendaries (<span id="legendaryResource"></span>)</p>
                                 </div>
                                 <span class="tooltiptext"><p>Legendary items of all flavors are found in the hands of isekaied heroes.</p><p>Used to build XP Farms</p></span>
                             </span>
                             <span class="tooltip">
-                                <div class="Wish">
+                                <div class="Wish" id="wish_resource">
                                     <img src="Images/Wish.png" alt="wish icon" class="icon">
                                     <p>Wishes (<span id="wishResource"></span>)</p>
                                 </div>
